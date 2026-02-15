@@ -5,42 +5,38 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Happy 6 Months 💗</title>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Dancing+Script:wght@600&family=Cinzel:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Dancing+Script:wght@600&family=Cinzel:wght@600&display=swap" rel="stylesheet">
 
 <style>
 :root {
   --pink: #ffc0d9;
   --hotpink: #ff69b4;
-  --deep: #b4005a;
+  --deep: #8b003a;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
-  font-family: 'Playfair Display', serif;
   background: var(--pink);
+  font-family: 'Playfair Display', serif;
   overflow-x: hidden;
 }
 
-/* Floating hearts */
-.heart {
+/* FLOATING EMOJIS */
+.float {
   position: fixed;
-  bottom: -20px;
-  font-size: 24px;
-  animation: floatUp 10s linear infinite;
-  opacity: 0.6;
+  bottom: -30px;
+  animation: floatUp linear infinite;
+  opacity: 0.7;
 }
 
 @keyframes floatUp {
-  from { transform: translateY(0); opacity: 0.6; }
-  to { transform: translateY(-120vh); opacity: 0; }
+  from { transform: translateY(0); }
+  to { transform: translateY(-130vh); opacity: 0; }
 }
 
-/* Pages */
+/* PAGES */
 .page {
   display: none;
   min-height: 100vh;
@@ -48,101 +44,96 @@ body {
   text-align: center;
 }
 
-.active {
-  display: block;
-}
+.active { display: block; }
 
-/* Buttons */
+/* BUTTONS */
 button {
-  padding: 14px 36px;
-  border-radius: 30px;
+  padding: 16px 42px;
+  border-radius: 40px;
   border: none;
   background: var(--hotpink);
   color: white;
-  font-size: 1.1em;
+  font-size: 1.2em;
   cursor: pointer;
   transition: 0.3s;
 }
 
 button:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
   background: #ff1493;
 }
 
-/* Letter paper */
+/* LETTER */
 .letter {
-  max-width: 700px;
+  max-width: 720px;
   margin: auto;
-  background: #fff5e6;
-  padding: 40px;
+  background: #fff2e0;
+  padding: 50px;
   font-family: 'Dancing Script', cursive;
-  font-size: 1.6em;
+  font-size: 1.7em;
   color: #5a0036;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-  border-radius: 10px;
+  border-radius: 12px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.25);
   transform: rotate(-1deg);
 }
 
-/* Gift diamonds */
-.diamonds {
+/* FULLSCREEN DIAMONDS */
+.gift-screen {
   display: flex;
-  justify-content: center;
-  gap: 50px;
-  margin-top: 80px;
-  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100vh;
 }
 
 .diamond {
-  width: 90px;
-  height: 280px;
-  background: linear-gradient(180deg, #ff9acb, #ff4fa3);
-  clip-path: polygon(50% 0%, 100% 10%, 100% 90%, 50% 100%, 0% 90%, 0% 10%);
+  width: 160px;
+  height: 85vh;
+  background: linear-gradient(180deg, #ff9acb, #ff2f92);
+  clip-path: polygon(50% 0%, 100% 8%, 100% 92%, 50% 100%, 0% 92%, 0% 8%);
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   cursor: pointer;
-  box-shadow: 0 0 25px rgba(255,105,180,0.7);
   animation: glow 2s infinite alternate;
 }
 
 @keyframes glow {
-  from { box-shadow: 0 0 20px rgba(255,105,180,0.5); }
-  to { box-shadow: 0 0 40px rgba(255,20,147,1); }
+  from { box-shadow: 0 0 30px rgba(255,105,180,0.6); }
+  to { box-shadow: 0 0 60px rgba(255,20,147,1); }
 }
 
 .diamond span {
   transform: rotate(-90deg);
   font-family: 'Cinzel', serif;
   color: white;
-  font-size: 1.3em;
-  letter-spacing: 3px;
+  font-size: 2em;
+  letter-spacing: 6px;
 }
 
-/* Images */
+/* DRAMATIC */
+.dark {
+  background: radial-gradient(circle, #ff5fa8, #6b0028);
+  color: white;
+  font-family: 'Cinzel', serif;
+}
+
+/* IMAGES */
 img {
   max-width: 300px;
   border-radius: 20px;
-  margin: 15px;
-}
-
-/* Dramatic page */
-.dramatic {
-  background: radial-gradient(circle, #ff85c1, #b4005a);
-  color: white;
-  font-family: 'Cinzel', serif;
+  margin: 20px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- LETTER PAGE -->
+<!-- LETTER -->
 <div class="page active" id="letter">
   <div class="letter">
-    My dearest Gracie,<br><br>
-    (Write your letter here 💗)<br><br>
-    Happy 6 months, my love. You are my favorite person, my safest place,
-    and my forever.
+    My sweetest Gracie,<br><br>
+    (Write your love letter here 💗)<br><br>
+    Happy six months, my love. Every moment with you feels like home.
   </div>
   <br><br>
   <button onclick="goTo('gifts')">Continue 💌</button>
@@ -151,17 +142,17 @@ img {
 <!-- GIFTS -->
 <div class="page" id="gifts">
   <h1>Choose Your Gift 💎</h1>
-  <div class="diamonds">
+  <div class="gift-screen">
     <div class="diamond" onclick="goTo('gift1')"><span>GIFT 1</span></div>
     <div class="diamond" onclick="goTo('gift2')"><span>GIFT 2</span></div>
-    <div class="diamond" onclick="goTo('gift3')"><span>GIFT 3</span></div>
+    <div class="diamond" onclick="goTo('gift3a')"><span>GIFT 3</span></div>
   </div>
 </div>
 
 <!-- GIFT 1 -->
 <div class="page" id="gift1">
-  <h1>Just For You 🌸</h1>
-  <p>You are loved more than you know.</p>
+  <h1>Just For You 🌹</h1>
+  <p>You deserve every flower in the world.</p>
   <img src="https://i.imgur.com/Oz6XG6p.png">
   <br>
   <button onclick="goTo('gifts')">Back</button>
@@ -177,16 +168,23 @@ img {
   <button onclick="goTo('gifts')">Back</button>
 </div>
 
-<!-- GIFT 3 (SURPRISE) -->
-<div class="page dramatic" id="gift3">
-  <h1>One Last Thing…</h1>
-  <p>Are you ready?</p>
-  <button onclick="goTo('final')">Yes 💖</button>
+<!-- GIFT 3 DRAMA PART 1 -->
+<div class="page dark" id="gift3a">
+  <h1>Wait…</h1>
+  <p>This one matters.</p>
+  <button onclick="goTo('gift3b')">Continue</button>
+</div>
+
+<!-- GIFT 3 DRAMA PART 2 -->
+<div class="page dark" id="gift3b">
+  <h1>CHECK FORTNITE :3 🎮💗</h1>
+  <p>I told you I was listening.</p>
+  <button onclick="goTo('final')">One Last Thing</button>
 </div>
 
 <!-- FINAL -->
 <div class="page" id="final">
-  <h1 style="font-size:3em;">HAPPPYY 6 MONTH ANNIVERSARY MY GRACIEEE 💗</h1>
+  <h1 style="font-size:3em;">HAPPPYY 6 MONTH ANNIVERSARY MY GRACIEEE 💖</h1>
   <p style="font-size:1.5em;">I LOVE YOU TO ALL THE STARS IN THE UNIVERSE AND BACK ✨</p>
   <img src="https://via.placeholder.com/300">
   <img src="https://via.placeholder.com/300">
@@ -199,16 +197,18 @@ function goTo(id) {
   window.scrollTo(0,0);
 }
 
-// Hearts
+// FLOATING EMOJIS
+const emojis = ['💗','🌹','💐'];
 setInterval(() => {
-  const heart = document.createElement('div');
-  heart.className = 'heart';
-  heart.innerText = '💗';
-  heart.style.left = Math.random() * 100 + 'vw';
-  heart.style.animationDuration = (6 + Math.random() * 6) + 's';
-  document.body.appendChild(heart);
-  setTimeout(() => heart.remove(), 10000);
-}, 600);
+  const el = document.createElement('div');
+  el.className = 'float';
+  el.innerText = emojis[Math.floor(Math.random()*emojis.length)];
+  el.style.left = Math.random()*100 + 'vw';
+  el.style.fontSize = (20 + Math.random()*30) + 'px';
+  el.style.animationDuration = (6 + Math.random()*8) + 's';
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 12000);
+}, 500);
 </script>
 
 </body>
