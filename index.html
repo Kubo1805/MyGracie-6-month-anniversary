@@ -1,172 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Happy 6 Months 💕</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Comic Sans MS', 'Poppins', cursive;
-      background: #ffc0d9;
-      color: #5a0036;
-      text-align: center;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 6 Months 💗</title>
 
-    .page {
-      display: none;
-      min-height: 100vh;
-      padding: 40px 20px;
-      box-sizing: border-box;
-    }
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Dancing+Script:wght@600&family=Cinzel:wght@600&display=swap" rel="stylesheet">
 
-    .active {
-      display: block;
-    }
+<style>
+:root {
+  --pink: #ffc0d9;
+  --hotpink: #ff69b4;
+  --deep: #b4005a;
+}
 
-    h1 {
-      font-size: 3em;
-      margin-bottom: 20px;
-    }
+* {
+  box-sizing: border-box;
+}
 
-    p {
-      font-size: 1.2em;
-      max-width: 700px;
-      margin: auto;
-      line-height: 1.6;
-    }
+body {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  background: var(--pink);
+  overflow-x: hidden;
+}
 
-    button {
-      margin-top: 40px;
-      padding: 15px 40px;
-      font-size: 1.2em;
-      border: none;
-      border-radius: 30px;
-      background: #ff69b4;
-      color: white;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+/* Floating hearts */
+.heart {
+  position: fixed;
+  bottom: -20px;
+  font-size: 24px;
+  animation: floatUp 10s linear infinite;
+  opacity: 0.6;
+}
 
-    button:hover {
-      background: #ff1493;
-      transform: scale(1.05);
-    }
+@keyframes floatUp {
+  from { transform: translateY(0); opacity: 0.6; }
+  to { transform: translateY(-120vh); opacity: 0; }
+}
 
-    /* Diamonds */
-    .diamonds {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 40px;
-      margin-top: 60px;
-    }
+/* Pages */
+.page {
+  display: none;
+  min-height: 100vh;
+  padding: 40px 20px;
+  text-align: center;
+}
 
-    .diamond {
-      width: 260px;
-      height: 80px;
-      background: #ff85c1;
-      transform: rotate(45deg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+.active {
+  display: block;
+}
 
-    .diamond span {
-      transform: rotate(-45deg);
-      font-size: 1.5em;
-      font-weight: bold;
-      color: white;
-    }
+/* Buttons */
+button {
+  padding: 14px 36px;
+  border-radius: 30px;
+  border: none;
+  background: var(--hotpink);
+  color: white;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-    .diamond:hover {
-      background: #ff4fa3;
-      transform: rotate(45deg) scale(1.1);
-    }
+button:hover {
+  transform: scale(1.05);
+  background: #ff1493;
+}
 
-    img {
-      max-width: 300px;
-      margin: 20px;
-      border-radius: 20px;
-    }
-  </style>
+/* Letter paper */
+.letter {
+  max-width: 700px;
+  margin: auto;
+  background: #fff5e6;
+  padding: 40px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.6em;
+  color: #5a0036;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  transform: rotate(-1deg);
+}
+
+/* Gift diamonds */
+.diamonds {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 80px;
+  flex-wrap: wrap;
+}
+
+.diamond {
+  width: 90px;
+  height: 280px;
+  background: linear-gradient(180deg, #ff9acb, #ff4fa3);
+  clip-path: polygon(50% 0%, 100% 10%, 100% 90%, 50% 100%, 0% 90%, 0% 10%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 0 25px rgba(255,105,180,0.7);
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 20px rgba(255,105,180,0.5); }
+  to { box-shadow: 0 0 40px rgba(255,20,147,1); }
+}
+
+.diamond span {
+  transform: rotate(-90deg);
+  font-family: 'Cinzel', serif;
+  color: white;
+  font-size: 1.3em;
+  letter-spacing: 3px;
+}
+
+/* Images */
+img {
+  max-width: 300px;
+  border-radius: 20px;
+  margin: 15px;
+}
+
+/* Dramatic page */
+.dramatic {
+  background: radial-gradient(circle, #ff85c1, #b4005a);
+  color: white;
+  font-family: 'Cinzel', serif;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- PAGE 1: LETTER -->
-  <div class="page active" id="page-letter">
-    <h1>Hi my love 💕</h1>
-    <p>
-      (Write your beautiful letter here 💗)<br><br>
-      Happy 6 month anniversary, my Gracie. Every day with you means the world to me.
-      I love you more than words can ever explain.
-    </p>
-    <button onclick="goTo('page-gifts')">Continue 💗</button>
+<!-- LETTER PAGE -->
+<div class="page active" id="letter">
+  <div class="letter">
+    My dearest Gracie,<br><br>
+    (Write your letter here 💗)<br><br>
+    Happy 6 months, my love. You are my favorite person, my safest place,
+    and my forever.
   </div>
+  <br><br>
+  <button onclick="goTo('gifts')">Continue 💌</button>
+</div>
 
-  <!-- PAGE 2: GIFTS -->
-  <div class="page" id="page-gifts">
-    <h1>Choose Your Gift 💝</h1>
-    <div class="diamonds">
-      <div class="diamond" onclick="goTo('gift1')"><span>GIFT 1</span></div>
-      <div class="diamond" onclick="goTo('gift2')"><span>GIFT 2</span></div>
-      <div class="diamond" onclick="goTo('gift3')"><span>GIFT 3</span></div>
-    </div>
+<!-- GIFTS -->
+<div class="page" id="gifts">
+  <h1>Choose Your Gift 💎</h1>
+  <div class="diamonds">
+    <div class="diamond" onclick="goTo('gift1')"><span>GIFT 1</span></div>
+    <div class="diamond" onclick="goTo('gift2')"><span>GIFT 2</span></div>
+    <div class="diamond" onclick="goTo('gift3')"><span>GIFT 3</span></div>
   </div>
+</div>
 
-  <!-- GIFT 1 -->
-  <div class="page" id="gift1">
-    <h1>For You 🌸</h1>
-    <p>
-      A little note just for you 💕  
-      You are the most beautiful part of my life.
-    </p>
-    <img src="https://i.imgur.com/Oz6XG6p.png" alt="flowers">
-    <br>
-    <button onclick="goTo('page-gifts')">Back</button>
-  </div>
+<!-- GIFT 1 -->
+<div class="page" id="gift1">
+  <h1>Just For You 🌸</h1>
+  <p>You are loved more than you know.</p>
+  <img src="https://i.imgur.com/Oz6XG6p.png">
+  <br>
+  <button onclick="goTo('gifts')">Back</button>
+</div>
 
-  <!-- GIFT 2 -->
-  <div class="page" id="gift2">
-    <h1>Our Game 🎮</h1>
-    <p>
-      A game for us, so we can laugh, rage, and make memories together 💗
-    </p>
-    <img src="https://via.placeholder.com/300x200?text=Game+Pic+1">
-    <img src="https://via.placeholder.com/300x200?text=Game+Pic+2">
-    <br>
-    <button onclick="goTo('page-gifts')">Back</button>
-  </div>
+<!-- GIFT 2 -->
+<div class="page" id="gift2">
+  <h1>Our Game 🎮</h1>
+  <p>For us. Always.</p>
+  <img src="https://via.placeholder.com/300x200">
+  <img src="https://via.placeholder.com/300x200">
+  <br>
+  <button onclick="goTo('gifts')">Back</button>
+</div>
 
-  <!-- GIFT 3 -->
-  <div class="page" id="gift3">
-    <h1>CHECK FORTNITE :3</h1>
-    <p>
-      Because you wanted that skin SO BADLY 😼💗
-    </p>
-    <button onclick="goTo('final')">Continue</button>
-  </div>
+<!-- GIFT 3 (SURPRISE) -->
+<div class="page dramatic" id="gift3">
+  <h1>One Last Thing…</h1>
+  <p>Are you ready?</p>
+  <button onclick="goTo('final')">Yes 💖</button>
+</div>
 
-  <!-- FINAL PAGE -->
-  <div class="page" id="final">
-    <h1>HAPPPYY 6 MONTH ANNIVERSARY MY GRACIEEE 💖</h1>
-    <p>
-      I LOVEEE U TO ALL THE STARS IN THE UNIVERSE AND BACK ✨
-    </p>
-    <img src="https://via.placeholder.com/300?text=Us+1">
-    <img src="https://via.placeholder.com/300?text=Us+2">
-    <img src="https://via.placeholder.com/300?text=Us+3">
-  </div>
+<!-- FINAL -->
+<div class="page" id="final">
+  <h1 style="font-size:3em;">HAPPPYY 6 MONTH ANNIVERSARY MY GRACIEEE 💗</h1>
+  <p style="font-size:1.5em;">I LOVE YOU TO ALL THE STARS IN THE UNIVERSE AND BACK ✨</p>
+  <img src="https://via.placeholder.com/300">
+  <img src="https://via.placeholder.com/300">
+</div>
 
-  <script>
-    function goTo(id) {
-      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-      window.scrollTo(0, 0);
-    }
-  </script>
+<script>
+function goTo(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+}
+
+// Hearts
+setInterval(() => {
+  const heart = document.createElement('div');
+  heart.className = 'heart';
+  heart.innerText = '💗';
+  heart.style.left = Math.random() * 100 + 'vw';
+  heart.style.animationDuration = (6 + Math.random() * 6) + 's';
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 10000);
+}, 600);
+</script>
 
 </body>
 </html>
