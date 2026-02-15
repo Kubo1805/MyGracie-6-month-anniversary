@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Happy 6 Months 💗</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Dancing+Script:wght@600&family=Cinzel:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Dancing+Script:wght@600&family=Cinzel:wght@600&display=swap" rel="stylesheet">
 
 <style>
 :root {
   --pink: #ffc0d9;
   --hotpink: #ff69b4;
-  --deep: #8b003a;
+  --deep: #7a002f;
 }
 
 * { box-sizing: border-box; }
@@ -28,7 +28,7 @@ body {
   position: fixed;
   bottom: -30px;
   animation: floatUp linear infinite;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 @keyframes floatUp {
@@ -48,12 +48,12 @@ body {
 
 /* BUTTONS */
 button {
-  padding: 16px 42px;
+  padding: 18px 48px;
   border-radius: 40px;
   border: none;
   background: var(--hotpink);
   color: white;
-  font-size: 1.2em;
+  font-size: 1.3em;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -65,40 +65,48 @@ button:hover {
 
 /* LETTER */
 .letter {
-  max-width: 720px;
+  max-width: 760px;
   margin: auto;
   background: #fff2e0;
-  padding: 50px;
+  padding: 55px;
   font-family: 'Dancing Script', cursive;
-  font-size: 1.7em;
+  font-size: 1.9em;
   color: #5a0036;
   border-radius: 12px;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.25);
   transform: rotate(-1deg);
 }
 
-/* FULLSCREEN DIAMONDS */
+/* GIFT PAGE */
+.gift-title {
+  font-size: 3em;
+  margin-bottom: 40px;
+}
+
+/* DIAMONDS FULLSCREEN */
 .gift-screen {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 35px;
   align-items: center;
-  min-height: 100vh;
+  min-height: 75vh;
 }
 
 .diamond {
-  width: 160px;
-  height: 85vh;
+  width: 180px;
+  height: 82vh;
   background: linear-gradient(180deg, #ff9acb, #ff2f92);
   clip-path: polygon(50% 0%, 100% 8%, 100% 92%, 50% 100%, 0% 92%, 0% 8%);
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  border: 4px solid black;
   animation: glow 2s infinite alternate;
 }
 
 @keyframes glow {
-  from { box-shadow: 0 0 30px rgba(255,105,180,0.6); }
+  from { box-shadow: 0 0 25px rgba(0,0,0,0.6); }
   to { box-shadow: 0 0 60px rgba(255,20,147,1); }
 }
 
@@ -106,22 +114,31 @@ button:hover {
   transform: rotate(-90deg);
   font-family: 'Cinzel', serif;
   color: white;
-  font-size: 2em;
+  font-size: 2.1em;
   letter-spacing: 6px;
+}
+
+/* BIG TITLES */
+.big-title {
+  font-size: 3.2em;
+  margin-bottom: 20px;
+}
+
+/* IMAGES */
+.big-img {
+  max-width: 420px;
+  border-radius: 25px;
+  margin: 20px;
 }
 
 /* DRAMATIC */
 .dark {
-  background: radial-gradient(circle, #ff5fa8, #6b0028);
+  background: radial-gradient(circle, #ff5fa8, #5c0022);
   color: white;
   font-family: 'Cinzel', serif;
-}
-
-/* IMAGES */
-img {
-  max-width: 300px;
-  border-radius: 20px;
-  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 </style>
 </head>
@@ -132,16 +149,16 @@ img {
 <div class="page active" id="letter">
   <div class="letter">
     My sweetest Gracie,<br><br>
-    (Write your love letter here 💗)<br><br>
-    Happy six months, my love. Every moment with you feels like home.
+    (Write your letter here 💗)<br><br>
+    Happy six months, my love. You are my favorite person in the entire universe.
   </div>
   <br><br>
   <button onclick="goTo('gifts')">Continue 💌</button>
 </div>
 
-<!-- GIFTS -->
+<!-- GIFTS PAGE -->
 <div class="page" id="gifts">
-  <h1>Choose Your Gift 💎</h1>
+  <div class="gift-title">GIFTS FOR MY LOVEE 🌹🌹🌹</div>
   <div class="gift-screen">
     <div class="diamond" onclick="goTo('gift1')"><span>GIFT 1</span></div>
     <div class="diamond" onclick="goTo('gift2')"><span>GIFT 2</span></div>
@@ -151,43 +168,44 @@ img {
 
 <!-- GIFT 1 -->
 <div class="page" id="gift1">
-  <h1>Just For You 🌹</h1>
-  <p>You deserve every flower in the world.</p>
-  <img src="https://i.imgur.com/Oz6XG6p.png">
+  <div class="big-title">FLOWERS FOR MY PRINCESS 🌹</div>
+  <img class="big-img" src="FLOWER1.jpg">
+  <img class="big-img" src="FLOWER2.jpg">
   <br>
   <button onclick="goTo('gifts')">Back</button>
 </div>
 
 <!-- GIFT 2 -->
 <div class="page" id="gift2">
-  <h1>Our Game 🎮</h1>
-  <p>For us. Always.</p>
-  <img src="https://via.placeholder.com/300x200">
-  <img src="https://via.placeholder.com/300x200">
+  <div class="big-title">A SMALL GAME FOR US 🎮</div>
+  <img class="big-img" src="GAME1.jpg">
+  <img class="big-img" src="GAME2.jpg">
+  <img class="big-img" src="GAME3.jpg">
   <br>
   <button onclick="goTo('gifts')">Back</button>
 </div>
 
-<!-- GIFT 3 DRAMA PART 1 -->
+<!-- GIFT 3 DRAMA 1 -->
 <div class="page dark" id="gift3a">
-  <h1>Wait…</h1>
-  <p>This one matters.</p>
+  <h1>ONE MORE GIFT FOR MY LOVE 💗</h1>
+  <br>
   <button onclick="goTo('gift3b')">Continue</button>
 </div>
 
-<!-- GIFT 3 DRAMA PART 2 -->
+<!-- GIFT 3 DRAMA 2 -->
 <div class="page dark" id="gift3b">
-  <h1>CHECK FORTNITE :3 🎮💗</h1>
-  <p>I told you I was listening.</p>
-  <button onclick="goTo('final')">One Last Thing</button>
+  <h1>CHECK FORTNITE :3 🎮💖</h1>
+  <br>
+  <button onclick="goTo('final')">Continue</button>
 </div>
 
 <!-- FINAL -->
 <div class="page" id="final">
-  <h1 style="font-size:3em;">HAPPPYY 6 MONTH ANNIVERSARY MY GRACIEEE 💖</h1>
-  <p style="font-size:1.5em;">I LOVE YOU TO ALL THE STARS IN THE UNIVERSE AND BACK ✨</p>
-  <img src="https://via.placeholder.com/300">
-  <img src="https://via.placeholder.com/300">
+  <div class="big-title">HAPPPYY 6 MONTH ANNIVERSARY MY GRACIEEE 💖</div>
+  <p style="font-size:1.6em;">I LOVE YOU TO ALL THE STARS IN THE UNIVERSE AND BACK ✨</p>
+  <img class="big-img" src="US1.jpg">
+  <img class="big-img" src="US2.jpg">
+  <img class="big-img" src="US3.jpg">
 </div>
 
 <script>
@@ -204,11 +222,11 @@ setInterval(() => {
   el.className = 'float';
   el.innerText = emojis[Math.floor(Math.random()*emojis.length)];
   el.style.left = Math.random()*100 + 'vw';
-  el.style.fontSize = (20 + Math.random()*30) + 'px';
-  el.style.animationDuration = (6 + Math.random()*8) + 's';
+  el.style.fontSize = (22 + Math.random()*32) + 'px';
+  el.style.animationDuration = (6 + Math.random()*7) + 's';
   document.body.appendChild(el);
   setTimeout(() => el.remove(), 12000);
-}, 500);
+}, 450);
 </script>
 
 </body>
