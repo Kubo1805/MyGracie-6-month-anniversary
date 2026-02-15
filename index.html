@@ -11,7 +11,7 @@
 :root {
   --pink: #ffc0d9;
   --hotpink: #ff69b4;
-  --deep: #7a002f;
+  --deep: #6b0026;
 }
 
 * { box-sizing: border-box; }
@@ -44,11 +44,15 @@ body {
   text-align: center;
 }
 
-.active { display: block; }
+.page.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 /* BUTTONS */
 button {
-  padding: 18px 48px;
+  padding: 18px 50px;
   border-radius: 40px;
   border: none;
   background: var(--hotpink);
@@ -59,7 +63,7 @@ button {
 }
 
 button:hover {
-  transform: scale(1.08);
+  transform: scale(1.07);
   background: #ff1493;
 }
 
@@ -80,48 +84,48 @@ button:hover {
 /* GIFT PAGE */
 .gift-title {
   font-size: 3em;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 
-/* DIAMONDS FULLSCREEN */
+/* DIAMONDS */
 .gift-screen {
   display: flex;
   justify-content: center;
-  gap: 35px;
+  gap: 80px;
   align-items: center;
-  min-height: 75vh;
 }
 
 .diamond {
-  width: 180px;
-  height: 82vh;
-  background: linear-gradient(180deg, #ff9acb, #ff2f92);
+  width: 170px;
+  height: 65vh;
+  background: linear-gradient(180deg, #ffb3d9, #ff5fa8);
   clip-path: polygon(50% 0%, 100% 8%, 100% 92%, 50% 100%, 0% 92%, 0% 8%);
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  border: 4px solid black;
-  animation: glow 2s infinite alternate;
+  border: 4px solid #000;
+  box-shadow: 0 0 25px rgba(0,0,0,0.4);
+  transition: transform 0.3s;
 }
 
-@keyframes glow {
-  from { box-shadow: 0 0 25px rgba(0,0,0,0.6); }
-  to { box-shadow: 0 0 60px rgba(255,20,147,1); }
+.diamond:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 45px rgba(255,20,147,0.9);
 }
 
 .diamond span {
   transform: rotate(-90deg);
   font-family: 'Cinzel', serif;
   color: white;
-  font-size: 2.1em;
+  font-size: 2em;
   letter-spacing: 6px;
 }
 
 /* BIG TITLES */
 .big-title {
   font-size: 3.2em;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 /* IMAGES */
@@ -131,14 +135,11 @@ button:hover {
   margin: 20px;
 }
 
-/* DRAMATIC */
+/* DARK DRAMA */
 .dark {
-  background: radial-gradient(circle, #ff5fa8, #5c0022);
+  background: radial-gradient(circle, #ff5fa8, #4a001b);
   color: white;
   font-family: 'Cinzel', serif;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 </style>
 </head>
@@ -150,13 +151,13 @@ button:hover {
   <div class="letter">
     My sweetest Gracie,<br><br>
     (Write your letter here 💗)<br><br>
-    Happy six months, my love. You are my favorite person in the entire universe.
+    Happy six months, my love. You are my favorite person in the universe.
   </div>
   <br><br>
   <button onclick="goTo('gifts')">Continue 💌</button>
 </div>
 
-<!-- GIFTS PAGE -->
+<!-- GIFTS -->
 <div class="page" id="gifts">
   <div class="gift-title">GIFTS FOR MY LOVEE 🌹🌹🌹</div>
   <div class="gift-screen">
@@ -185,14 +186,14 @@ button:hover {
   <button onclick="goTo('gifts')">Back</button>
 </div>
 
-<!-- GIFT 3 DRAMA 1 -->
+<!-- GIFT 3 STEP 1 -->
 <div class="page dark" id="gift3a">
   <h1>ONE MORE GIFT FOR MY LOVE 💗</h1>
   <br>
   <button onclick="goTo('gift3b')">Continue</button>
 </div>
 
-<!-- GIFT 3 DRAMA 2 -->
+<!-- GIFT 3 STEP 2 -->
 <div class="page dark" id="gift3b">
   <h1>CHECK FORTNITE :3 🎮💖</h1>
   <br>
@@ -223,10 +224,10 @@ setInterval(() => {
   el.innerText = emojis[Math.floor(Math.random()*emojis.length)];
   el.style.left = Math.random()*100 + 'vw';
   el.style.fontSize = (22 + Math.random()*32) + 'px';
-  el.style.animationDuration = (6 + Math.random()*7) + 's';
+  el.style.animationDuration = (7 + Math.random()*7) + 's';
   document.body.appendChild(el);
-  setTimeout(() => el.remove(), 12000);
-}, 450);
+  setTimeout(() => el.remove(), 14000);
+}, 500);
 </script>
 
 </body>
