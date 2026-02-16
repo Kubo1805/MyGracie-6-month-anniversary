@@ -2,193 +2,231 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>For My Love 💗</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 6 Months 💗</title>
 
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Sacramento&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Dancing+Script:wght@600&family=Cinzel:wght@600&display=swap" rel="stylesheet">
 
 <style>
+:root {
+  --pink: #ffc0d9;
+  --hotpink: #ff69b4;
+  --deep: #6b0026;
+}
+
+* { box-sizing: border-box; }
+
 body {
   margin: 0;
-  background: #ffc9dc;
+  background: var(--pink);
   font-family: 'Playfair Display', serif;
   overflow-x: hidden;
 }
 
-/* Pages */
+/* FLOATING EMOJIS */
+.float {
+  position: fixed;
+  bottom: -30px;
+  animation: floatUp linear infinite;
+  opacity: 0.85;
+}
+
+@keyframes floatUp {
+  from { transform: translateY(0); }
+  to { transform: translateY(-130vh); opacity: 0; }
+}
+
+/* PAGES */
 .page {
   display: none;
   min-height: 100vh;
   padding: 40px 20px;
   text-align: center;
 }
-.page.active { display: block; }
 
-/* Titles */
-.big-title {
-  font-size: 3em;
-  margin-bottom: 15px;
-}
-.handwritten {
-  font-family: 'Sacramento', cursive;
-  font-size: 2.4em;
-  background: #fff0f6;
-  padding: 35px;
-  border-radius: 20px;
-  max-width: 900px;
-  margin: auto;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+.page.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-/* Buttons */
+/* BUTTONS */
 button {
-  padding: 15px 35px;
+  padding: 18px 50px;
+  border-radius: 40px;
   border: none;
-  border-radius: 30px;
-  background: #ff5fa2;
+  background: var(--hotpink);
   color: white;
-  font-size: 1.1em;
+  font-size: 1.3em;
   cursor: pointer;
-  margin-top: 30px;
+  transition: 0.3s;
 }
-button:hover { background: #ff2f87; }
 
-/* Diamonds */
-.diamond-container {
+button:hover {
+  transform: scale(1.07);
+  background: #ff1493;
+}
+
+/* LETTER */
+.letter {
+  max-width: 760px;
+  margin: auto;
+  background: #fff2e0;
+  padding: 55px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.9em;
+  color: #5a0036;
+  border-radius: 12px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+  transform: rotate(-1deg);
+}
+
+/* GIFT PAGE */
+.gift-title {
+  font-size: 3em;
+  margin-bottom: 50px;
+}
+
+/* DIAMONDS */
+.gift-screen {
   display: flex;
   justify-content: center;
-  gap: 80px;
-  margin-top: 70px;
-  flex-wrap: wrap;
+  gap: 90px;
+  align-items: center;
 }
 
 .diamond {
-  width: 220px;
-  height: 420px;
-  background: linear-gradient(135deg, #ff5fa2, #ff8ec7);
-  clip-path: polygon(50% 0%, 100% 10%, 100% 90%, 50% 100%, 0% 90%, 0% 10%);
-  border: 5px solid black;
+  width: 170px;
+  height: 65vh;
+  background: linear-gradient(180deg, #ffb3d9, #ff5fa8);
+  clip-path: polygon(50% 0%, 100% 8%, 100% 92%, 50% 100%, 0% 92%, 0% 8%);
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: center;
-  font-size: 2em;
-  color: white;
   cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  box-shadow: 0 0 30px rgba(255, 0, 120, 0.6);
+  border: 4px solid black;
+  box-shadow: 0 0 25px rgba(0,0,0,0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+/* TAP ANIMATION */
 .diamond:active {
-  transform: scale(0.9);
+  transform: scale(0.92);
+  box-shadow: 0 0 60px rgba(255,20,147,1);
 }
 
-/* Images */
-.image-row {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin-top: 40px;
-  flex-wrap: wrap;
+.diamond span {
+  transform: rotate(-90deg);
+  font-family: 'Cinzel', serif;
+  color: white;
+  font-size: 2em;
+  letter-spacing: 6px;
 }
-.image-row img {
-  max-width: 320px;
+
+/* BIG TITLES */
+.big-title {
+  font-size: 3.2em;
+  margin-bottom: 25px;
+}
+
+/* IMAGES */
+.big-img {
+  max-width: 420px;
   border-radius: 25px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+  margin: 20px;
 }
 
-/* Floating emojis */
-.floating {
-  position: fixed;
-  bottom: -30px;
-  font-size: 22px;
-  animation: floatUp 8s linear infinite;
-  opacity: 0.7;
-}
-@keyframes floatUp {
-  from { transform: translateY(0); opacity: 1; }
-  to { transform: translateY(-110vh); opacity: 0; }
+/* DARK DRAMA */
+.dark {
+  background: radial-gradient(circle, #ff5fa8, #4a001b);
+  color: white;
+  font-family: 'Cinzel', serif;
 }
 </style>
 </head>
 
 <body>
 
-<!-- PAGE 1 -->
+<!-- LETTER -->
 <div class="page active" id="letter">
-  <div class="handwritten">
-    My love,<br><br>
-    Happy 6 months to the most beautiful soul in my life.  
-    Every moment with you means more to me than I can ever put into words.
-    You are my comfort, my joy, my favorite person in the universe.  
-    I love you endlessly. 💗
+  <div class="letter">
+    My sweetest Gracie,<br><br>
+    (Write your letter here 💗)<br><br>
+    Happy six months, my love. You are my favorite person in the universe.
   </div>
-  <button onclick="goTo('gifts')">Continue 💞</button>
+  <br><br>
+  <button onclick="goTo('gifts')">Continue 💌</button>
 </div>
 
-<!-- PAGE 2 -->
+<!-- GIFTS -->
 <div class="page" id="gifts">
-  <div class="big-title">GIFTSS FOR MY LOVEE 🌹🌹🌹</div>
-
-  <div class="diamond-container">
-    <div class="diamond" onclick="goTo('gift1')">GIFT 1</div>
-    <div class="diamond" onclick="goTo('gift2')">GIFT 2</div>
-    <div class="diamond" onclick="goTo('gift3')">GIFT 3</div>
+  <div class="gift-title">GIFTS FOR MY LOVEE 🌹🌹🌹</div>
+  <div class="gift-screen">
+    <div class="diamond" onclick="goTo('gift1')"><span>GIFT 1</span></div>
+    <div class="diamond" onclick="goTo('gift2')"><span>GIFT 2</span></div>
+    <div class="diamond" onclick="goTo('gift3a')"><span>GIFT 3</span></div>
   </div>
 </div>
 
 <!-- GIFT 1 -->
 <div class="page" id="gift1">
   <div class="big-title">FLOWERS FOR MY PRINCESS 🌹</div>
-  <div class="image-row">
-    <img src="FLOWER1.jpg">
-  </div>
+  <img class="big-img" src="FLOWER1.jpg">
+  <br>
   <button onclick="goTo('gifts')">Back</button>
 </div>
 
 <!-- GIFT 2 -->
 <div class="page" id="gift2">
   <div class="big-title">A SMALL GAME FOR US 🎮</div>
-  <div class="image-row">
-    <img src="GAME1.jpg">
-    <img src="GAME2.jpg">
-    <img src="GAME3.jpg">
-  </div>
+  <img class="big-img" src="GAME1.jpg">
+  <img class="big-img" src="GAME2.jpg">
+  <img class="big-img" src="GAME3.jpg">
+  <br>
   <button onclick="goTo('gifts')">Back</button>
 </div>
 
-<!-- GIFT 3 -->
-<div class="page" id="gift3">
-  <div class="big-title">ONE MORE GIFT FOR MY LOVE 💖</div>
-  <button onclick="goTo('final')">Continue 💗</button>
+<!-- GIFT 3 STEP 1 -->
+<div class="page dark" id="gift3a">
+  <h1>ONE MORE GIFT FOR MY LOVE 💗</h1>
+  <br>
+  <button onclick="goTo('gift3b')">Continue</button>
+</div>
+
+<!-- GIFT 3 STEP 2 -->
+<div class="page dark" id="gift3b">
+  <h1>CHECK FORTNITE :3 🎮💖</h1>
+  <br>
+  <button onclick="goTo('final')">Continue</button>
 </div>
 
 <!-- FINAL -->
 <div class="page" id="final">
-  <div class="big-title">HAPPPYY 6 MONTH ANNIVERSARY MY GRACIEEE 💞</div>
+  <div class="big-title">HAPPPYY 6 MONTH ANNIVERSARY MY GRACIEEE 💖</div>
   <p style="font-size:1.6em;">I LOVE YOU TO ALL THE STARS IN THE UNIVERSE AND BACK ✨</p>
-
-  <div class="image-row">
-    <img src="US1.jpg">
-    <img src="US2.jpg">
-  </div>
+  <img class="big-img" src="US1.jpg">
+  <img class="big-img" src="US2.jpg">
 </div>
 
 <script>
 function goTo(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
 }
 
-/* Floating emojis */
-const emojis = ['💗','🌹'];
+// FLOATING EMOJIS
+const emojis = ['💗','🌹','💐'];
 setInterval(() => {
-  const e = document.createElement('div');
-  e.className = 'floating';
-  e.style.left = Math.random()*100 + 'vw';
-  e.innerText = emojis[Math.floor(Math.random()*emojis.length)];
-  document.body.appendChild(e);
-  setTimeout(()=>e.remove(),8000);
-}, 600);
+  const el = document.createElement('div');
+  el.className = 'float';
+  el.innerText = emojis[Math.floor(Math.random()*emojis.length)];
+  el.style.left = Math.random()*100 + 'vw';
+  el.style.fontSize = (22 + Math.random()*32) + 'px';
+  el.style.animationDuration = (7 + Math.random()*7) + 's';
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 14000);
+}, 500);
 </script>
 
 </body>
