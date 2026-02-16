@@ -29,6 +29,7 @@ body {
   bottom: -30px;
   animation: floatUp linear infinite;
   opacity: 0.85;
+  pointer-events: none;
 }
 
 @keyframes floatUp {
@@ -93,6 +94,7 @@ button:hover {
   justify-content: center;
   gap: 90px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .diamond {
@@ -109,7 +111,6 @@ button:hover {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* TAP ANIMATION */
 .diamond:active {
   transform: scale(0.92);
   box-shadow: 0 0 60px rgba(255,20,147,1);
@@ -123,17 +124,27 @@ button:hover {
   letter-spacing: 6px;
 }
 
-/* BIG TITLES */
+/* TITLES */
 .big-title {
   font-size: 3.2em;
   margin-bottom: 25px;
+}
+
+/* IMAGE CONTAINER (THE FIX 💗) */
+.image-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 30px;
+  flex-wrap: wrap;
 }
 
 /* IMAGES */
 .big-img {
   max-width: 420px;
   border-radius: 25px;
-  margin: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
 }
 
 /* DARK DRAMA */
@@ -171,7 +182,9 @@ button:hover {
 <!-- GIFT 1 -->
 <div class="page" id="gift1">
   <div class="big-title">FLOWERS FOR MY PRINCESS 🌹</div>
-  <img class="big-img" src="FLOWER1.jpg">
+  <div class="image-row">
+    <img class="big-img" src="FLOWER1.jpg">
+  </div>
   <br>
   <button onclick="goTo('gifts')">Back</button>
 </div>
@@ -179,9 +192,11 @@ button:hover {
 <!-- GIFT 2 -->
 <div class="page" id="gift2">
   <div class="big-title">A SMALL GAME FOR US 🎮</div>
-  <img class="big-img" src="GAME1.jpg">
-  <img class="big-img" src="GAME2.jpg">
-  <img class="big-img" src="GAME3.jpg">
+  <div class="image-row">
+    <img class="big-img" src="GAME1.jpg">
+    <img class="big-img" src="GAME2.jpg">
+    <img class="big-img" src="GAME3.jpg">
+  </div>
   <br>
   <button onclick="goTo('gifts')">Back</button>
 </div>
@@ -204,8 +219,10 @@ button:hover {
 <div class="page" id="final">
   <div class="big-title">HAPPPYY 6 MONTH ANNIVERSARY MY GRACIEEE 💖</div>
   <p style="font-size:1.6em;">I LOVE YOU TO ALL THE STARS IN THE UNIVERSE AND BACK ✨</p>
-  <img class="big-img" src="US1.jpg">
-  <img class="big-img" src="US2.jpg">
+  <div class="image-row">
+    <img class="big-img" src="US1.jpg">
+    <img class="big-img" src="US2.jpg">
+  </div>
 </div>
 
 <script>
