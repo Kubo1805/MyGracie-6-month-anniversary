@@ -130,7 +130,7 @@ button:hover {
   margin-bottom: 25px;
 }
 
-/* IMAGE CONTAINER (THE FIX 💗) */
+/* IMAGE ROW */
 .image-row {
   display: flex;
   justify-content: center;
@@ -158,12 +158,16 @@ button:hover {
 
 <body>
 
+<!-- 🎵 BACKGROUND MUSIC -->
+<audio id="bgMusic" loop>
+  <source src="https://res.cloudinary.com/dmmawtk9o/video/upload/v1770581528/Laufey_-_From_The_Start_Official_Music_Video_fxcfmb.mp3" type="audio/mpeg">
+</audio>
+
 <!-- LETTER -->
 <div class="page active" id="letter">
   <div class="letter">
     My Gracie,<br><br>
-    My Gracie my love first of all HAPPPYYYY 6 MOTH ANNIVERSARYYY MY LOVEEEE, obviously i wanted to do something so this for u my loveee, hope u like it sweetheartt, I love you more than anything my love, i hope this brings a precious smile on your face because thats all i ever want, i just want to see my baby smiling and happy for the rest of our lifes forever and ever my love, i love u sooo much, i love you to pluto and back and I love you to all the stars in the universe and back my Graicee🩷🩷🩷<br><br>
-    Happy six months, my love. Heres to a GAZILLION MOREEE.
+    My Gracie my love first of all HAPPPYYYY 6 MOTH ANNIVERSARYYY MY LOVEEEE...
   </div>
   <br><br>
   <button onclick="goTo('gifts')">Continue 💌</button>
@@ -201,21 +205,19 @@ button:hover {
   <button onclick="goTo('gifts')">Back</button>
 </div>
 
-<!-- GIFT 3 STEP 1 -->
+<!-- GIFT 3 -->
 <div class="page dark" id="gift3a">
   <h1>ONE MORE GIFT FOR MY LOVE 💗</h1>
   <br>
   <button onclick="goTo('gift3b')">Continue</button>
 </div>
 
-<!-- GIFT 3 STEP 2 -->
 <div class="page dark" id="gift3b">
-  <h1>CHECK OUR CHAT :3🎮💖</h1>
+  <h1>CHECK OUR CHAT :3 🎮💖</h1>
   <br>
   <button onclick="goTo('final')">Continue</button>
 </div>
 
-<!-- FINAL -->
 <div class="page" id="final">
   <div class="big-title">HAPPPYY 6 MONTH ANNIVERSARY MY GRACIEEE 💖</div>
   <p style="font-size:1.6em;">I LOVE YOU TO ALL THE STARS IN THE UNIVERSE AND BACK ✨</p>
@@ -226,10 +228,19 @@ button:hover {
 </div>
 
 <script>
+const music = document.getElementById("bgMusic");
+music.volume = 0.5;
+let musicStarted = false;
+
 function goTo(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   window.scrollTo(0,0);
+
+  if (!musicStarted) {
+    music.play().catch(() => {});
+    musicStarted = true;
+  }
 }
 
 // FLOATING EMOJIS
